@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: bebas-neue;
+  src: url(/public/fonts/bebas-neue-v15-latin-regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Source-Sans-3;
+  src: url(/public/fonts/source-sans-3-v18-latin-regular.woff2) format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Source-Sans-3;
+  src: url(/fonts/source-sans-3-v18-latin-600.woff2) format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-source-sans: "Source-Sans-3", sans-serif;
+  --font-bebas-neue: "bebas-neue", sans-serif;
+
+  --shadow-header: 0 35px 35px var(--color-primary);
+
+  --color-primary: #1CB6D2;
+  --color-secondary: #0F2128;
+  --color-accent: #FFB509;
+
+  --color-background: #f2f2f2;
+
+  --animate-header: header-reveal linear both;
+
+  @keyframes header-reveal {
+    from {
+      transform: translateY(-30%);
+      opacity: 0;
+      display: none;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+@utility header-reveal-animation {
+  
+  
+  animation: header-reveal linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0 300px;
+
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #f2f2f2;   
+    --color-secondary: #1a202c; 
+    --color-accent: #0077b6;
+
+    --color-background: #0f2128;
+  }
+} */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-primary);
+  }
+}
