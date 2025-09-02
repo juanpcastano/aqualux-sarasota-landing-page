@@ -30,34 +30,62 @@
 
   --shadow-header: 0 35px 35px var(--color-primary);
 
-  --color-primary: #1CB6D2;
-  --color-secondary: #0F2128;
-  --color-accent: #FFB509;
+  --color-primary: #1cb6d2;
+  --color-secondary: #0f2128;
+  --color-accent: #ffb509;
 
   --color-background: #f2f2f2;
+}
 
-  --animate-header: header-reveal linear both;
+@keyframes logo-reveal {
+  from {
+    transform: translateY(20%);
+    opacity: 0;
+    display: none;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-  @keyframes header-reveal {
-    from {
-      transform: translateY(-30%);
-      opacity: 0;
-      display: none;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
+@keyframes logo-hide {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+}
+
+@keyframes header-reveal {
+  from {
+    transform: translateY(-30%);
+    opacity: 0;
+    display: none;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @utility header-reveal-animation {
-  
-  
   animation: header-reveal linear both;
   animation-timeline: scroll(root);
   animation-range: 0 300px;
+}
 
+@utility logo-reveal-animation {
+  animation: logo-reveal 1.5s ease-out;
+}
+
+@utility logo-hide-scroll-animation {
+  animation: logo-hide linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0 300px;
 }
 
 /* @media (prefers-color-scheme: dark) {
