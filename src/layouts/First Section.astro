@@ -1,7 +1,101 @@
 ---
+import { Image } from "astro:assets";
+import ContactButtonsSection from "../components/Contact Buttons Section.astro";
 import Hero from "../components/Hero.astro";
+import waterTesting from "../../public/Water Chemical Testing.webp";
+import debrisRemoval from "../../public/Debris-Removal.webp";
+import equipmentInspection from "../../public/Equipment-Maintaining.webp";
 ---
 
-<div class="bg-[url('/hero.webp')] bg-cover bg-center w-full h-full flex flex-col items-center">
-  <Hero />
+<div
+  class="bg-[url('/hero.webp')] bg-cover bg-center w-full h-full flex flex-col items-center"
+>
+  <div class="w-full flex flex-col justify-center items-center p-4">
+    <section class="min-h-[250dvh] flex flex-col items-center max-w-7xl">
+      <Hero />
+      <div
+        class="bg-secondary/90 rounded-4xl p-14 content-reveal-animation mt-16"
+      >
+        <h1 class="text-8xl text-center font-bebas-neue text-background">
+          Your Trusted Florida Sarasota Pool Service Experts
+        </h1>
+        <p class="text-center text-background mt-5 text-2xl font-medium">
+          At Aqualux Sarasota LLC, we specialize in comprehensive pool services
+          including maintenance, cleaning, repairs, and renovations. Our team of
+          certified professionals is dedicated to ensuring your pool remains a
+          pristine and enjoyable oasis year-round. With a commitment to quality
+          and customer satisfaction, we tailor our services to meet your
+          specific needs, providing reliable and efficient solutions for both
+          residential and commercial pools in the Sarasota area.
+
+        </p>
+        <p class="text-center text-background mt-5 text-2xl font-medium">
+          We pride our company on reliability, great communication, integrity, and quality work. We are experts in our trade and will do our best to keep you as educated as we can on your particular task or project. We look forward to earning your business! Book with us online or feel free to give us a call today!
+        </p>
+      </div>
+      <ContactButtonsSection class="content-reveal-animation mt-16" />
+      <div
+        class="bg-secondary/90 rounded-4xl p-14 content-reveal-animation mt-16"
+      >
+        <h1 class="text-8xl text-center font-bebas-neue text-background">
+          Water Testing and Chemical Balancing
+        </h1>
+        <div class="flex flex-col lg:flex-row gap-10 mt-2">
+          <p class="text-center lg:text-start text-background mt-5 text-2xl font-medium">
+            Technicians test water for pH, chlorine levels, alkalinity, and
+            other factors to ensure it's safe and clear. They add necessary
+            chemicals (e.g., chlorine, algaecides) to prevent algae, bacteria,
+            and contaminants.
+          </p>
+          <Image
+            src={waterTesting}
+            alt="Water Testing"
+            class="rounded-2xl shadow-lg w-full lg:max-w-lg"
+          />
+        </div>
+      </div>
+      <div
+        class="bg-secondary/90 rounded-4xl p-14 content-reveal-animation mt-16"
+      >
+        <h1 class="text-8xl text-center font-bebas-neue text-background">
+          Debris Removal and Cleaning
+        </h1>
+        <div class="flex flex-col lg:flex-row gap-10 mt-2">
+          <Image
+            src={debrisRemoval}
+            alt="debris removal"
+            class="rounded-2xl shadow-lg w-full lg:max-w-lg"
+          />
+          <p class="text-center lg:text-start text-background mt-5 text-2xl font-medium">
+            Skimming leaves and debris from the surface, vacuuming the pool
+            floor, brushing walls and steps to prevent algae buildup, and
+            emptying skimmer and pump baskets.
+          </p>
+        </div>
+      </div>
+      <div
+        class="bg-secondary/90 rounded-4xl p-14 content-reveal-animation mt-16"
+      >
+        <h1 class="text-8xl text-center font-bebas-neue text-background">
+          Equipment Inspection and Maintenance
+        </h1>
+        <div class="flex flex-col lg:flex-row gap-10 mt-2">
+          <p class="text-center lg:text-start text-background mt-5 text-2xl font-medium">
+            Regular checks on pumps, filters, heaters, and other equipment to
+            ensure optimal performance and catch issues early, improving energy
+            efficiency and preventing costly repairs. Cleaning or backwashing
+            filters, lubricating O-rings, and checking for leaks or wear.
+            Promptly addressing any repairs needed to keep equipment running
+            efficiently.
+          </p>
+          <Image
+            src={equipmentInspection}
+            alt="Equipment Inspection"
+            class="rounded-2xl shadow-lg w-full lg:max-w-lg"
+          />
+        </div>
+      </div>
+      <ContactButtonsSection class="content-reveal-animation mt-16" />
+    </section>
+  </div>
 </div>

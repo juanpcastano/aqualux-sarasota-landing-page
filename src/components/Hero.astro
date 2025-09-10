@@ -1,16 +1,39 @@
 ---
-import Logo from "./Logo.astro";
-
-
-
-
+import LogoImage from "../images/HeroImageNoText.png";
+import { Image } from "astro:assets";
+import ContactButton from "./Contact Button.astro";
 ---
 
+<div
+  class="w-full h-screen logo-reveal-animation flex flex-col items-center justify-center"
+>
+  <div
+    class="logo-hide-scroll-animation w-full flex flex-col items-center justify-center"
+  >
+    <Image
+      src={LogoImage}
+      alt="Aqualux Sarasota Logo"
+      class="w-[90%] xl:w-[60%] h-fit"
+    />
+    <div
+      class="relative grid grid-cols-2 lg:grid-cols-3 grid-rows-2 lg:grid-rows-1 gap-0 lg:gap-4 items-center justify-items-center mt-4"
+    >
+      <ContactButton label="Contact Us" class="col-start-1 row-start-2 lg:row-auto lg:col-auto" />
 
-    <!-- <h1 class="text-6xl text-center font-bebas-neue text-primary">Your Trusted Florida Sarasota Pool Service Experts</h1>
-    <p class="text-center mt-5 text-lg max-w-2xl mx-auto">At Aqualux Sarasota LLC, we specialize in comprehensive pool services including maintenance, cleaning, repairs, and renovations. Our team of certified professionals is dedicated to ensuring your pool remains a pristine and enjoyable oasis year-round. With a commitment to quality and customer satisfaction, we tailor our services to meet your specific needs, providing reliable and efficient solutions for both residential and commercial pools in the Sarasota area.</p> -->
-<div class="w-full flex justify-center items-center">
-    <section class="min-h-[250dvh] flex flex-col items-center">
-        <Logo />
-    </section>
+      <div class="flex flex-col items-center justify-center col-start-1 col-end-3 lg:row-auto lg:col-auto">
+        <h1
+          class="font-bebas-neue text-secondary text-9xl mt-2"
+        >
+          AQUALUX
+        </h1>
+        <h2
+          class="font-source-sans 2xl:text-5xl lg:text-4xl text-2xl text-secondary"
+        >
+          SARASOTA
+        </h2>
+      </div>
+
+      <ContactButton label="Call Us" class="col-start-2 row-start-2 lg:row-auto lg:col-auto" />
+    </div>
+  </div>
 </div>

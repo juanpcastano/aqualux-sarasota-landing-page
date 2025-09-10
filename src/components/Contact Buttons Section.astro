@@ -1,0 +1,14 @@
+---
+import { Image } from "astro:assets";
+import ContactButton from "./Contact Button.astro";
+
+const { class: className = "" } = Astro.props;
+---
+
+<div class={`w-full ${className}`}>
+  <div class="relative flex gap-4 justify-around">
+    <ContactButton label="Contact Us" />
+    
+    <ContactButton label="Call Us" />
+  </div>
+</div>

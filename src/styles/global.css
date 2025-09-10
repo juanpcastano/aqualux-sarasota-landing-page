@@ -72,6 +72,23 @@
   }
 }
 
+@keyframes content-reveal {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-100px);
+    opacity: 1;
+  }
+}
+
+@utility content-reveal-animation {
+  animation: content-reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 20%
+}
+
 @utility header-reveal-animation {
   animation: header-reveal linear both;
   animation-timeline: scroll(root);
@@ -85,7 +102,7 @@
 @utility logo-hide-scroll-animation {
   animation: logo-hide linear both;
   animation-timeline: scroll(root);
-  animation-range: 0 300px;
+  animation-range: 0 500px;
 }
 
 /* @media (prefers-color-scheme: dark) {
