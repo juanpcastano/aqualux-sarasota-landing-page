@@ -1,10 +1,10 @@
 ---
-const { name, date, stars, comment, imgsrc, href } = Astro.props;
+const { class: clasName = "", name, date, stars, comment, imgsrc, href } = Astro.props;
 ---
 
-<div class="lg:w-[50%] p-4">
+<li class={`mx-5 hover:scale-110 transition-all ${clasName}`}>
   <a href={href} class="cursor-pointer">
-    <div class="bg-background/90 rounded-2xl p-8 h-[100%] lg:max-h-[350px]">
+    <div class="w-[500px] bg-background/90 rounded-2xl p-8 h-full">
       <div class="flex items-center justify-between">
         <h1 class="text-6xl text-start font-bebas-neue text-secondary">
           {name}
@@ -23,10 +23,10 @@ const { name, date, stars, comment, imgsrc, href } = Astro.props;
         <img src={imgsrc} alt="Quote Icon" class="w-12 h-12 lg:w-16 lg:h-16" />
       </div>
       <p
-        class="mt-4 text-secondary overflow-auto max-h-[220px] lg:max-h-[120px]"
+        class="mt-4 text-secondary overflow-auto"
       >
         {comment}
       </p>
     </div>
   </a>
-</div>
+</li>

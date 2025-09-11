@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import WeeklyService from "../../public/Weekly-Service.jpg";
-import Review from "../components/Review.astro";
 import ContactButtonsSection from "../components/Contact Buttons Section.astro";
+import Testimonials from "../components/Testimonials.astro";
 ---
 
 <div
@@ -45,64 +45,16 @@ import ContactButtonsSection from "../components/Contact Buttons Section.astro";
         </div>
       </div>
       <div
-        class="bg-secondary/90 rounded-4xl p-14 content-reveal-animation mt-16"
+        class="bg-secondary/90 rounded-4xl p-10 content-reveal-animation mt-16"
       >
         <h1 class="text-8xl text-center font-bebas-neue text-background">
           Our Clients Love Us!
         </h1>
-        <div class="lg:flex lg:flex-wrap mt-4">
-          <Review
-            stars={5}
-            name="D B."
-            comment="Eli was great about communicating and came over within a day. He cleaned the pool on the spot. I could see he was what I wanted in a pool service and we agreed to terms. I Recommend!!"
-            date="May 2025"
-            imgsrc="https://media.angi.com/s3fs-public/Angi-logo-Orange.svg"
-            href="https://www.angi.com/companylist/us/fl/sarasota/aqualux-sarasota-reviews-1.htm#reviews"
-          />
-          <Review
-            stars={5}
-            name="Greg E."
-            comment="Absolutely the best pool service since we have lived here in the past five years. Aqualux has been cleaning our pool for about a year now, and we have never had any issues. Anything that needs to be done, he does it before you need to ask. In the beginning when we hired this company, we had pool pump timing issues, and he figured it out when the other companies gave up. We had one pool service that had a different technician every week! We had others that took 5 minutes to “clean”, and left thinking they actually did something. THIS COMPANY GETS THE JOB DONE! Thanks Eli!!!!"
-            date="Apr 2025"
-            imgsrc="https://media.angi.com/s3fs-public/Angi-logo-Orange.svg"
-            href="https://www.angi.com/companylist/us/fl/sarasota/aqualux-sarasota-reviews-1.htm#reviews"
-          />
-          <Review
-            stars={5}
-            name="Luanne K."
-            comment="Eli at AquaLux is fantastic!! He runs his business with great customer care. Eli is professional, honest and really cares about making his clients happy.. My pool is sparkling blue!! Thank you Eli for making my pool look beautiful!! LuAnne Kirschner"
-            date="Apr 2025"
-            imgsrc="https://media.angi.com/s3fs-public/Angi-logo-Orange.svg"
-            href="https://www.angi.com/companylist/us/fl/sarasota/aqualux-sarasota-reviews-1.htm#reviews"
-          />
-          <Review
-            stars={5}
-            name="Charlotte C."
-            comment="Very prompt and professional"
-            date="Apr 2025"
-            imgsrc="https://media.angi.com/s3fs-public/Angi-logo-Orange.svg"
-            href="https://www.angi.com/companylist/us/fl/sarasota/aqualux-sarasota-reviews-1.htm#reviews"
-          />
-          <Review
-            stars={5}
-            name="Dayrin L."
-            comment="They do an amazing job! They're always on time, professional, and leave my pool crystal clear. Super reliable and friendly, highly recommend!"
-            date="Apr 2025"
-            imgsrc="https://media.angi.com/s3fs-public/Angi-logo-Orange.svg"
-            href="https://www.angi.com/companylist/us/fl/sarasota/aqualux-sarasota-reviews-1.htm#reviews"
-          />
-          <Review
-            stars={5}
-            name="Paula P."
-            comment="They do an excellent job with my pool"
-            date="Apr 2025"
-            imgsrc="https://media.angi.com/s3fs-public/Angi-logo-Orange.svg"
-            href="https://www.angi.com/companylist/us/fl/sarasota/aqualux-sarasota-reviews-1.htm#reviews"
-          />
-        </div>
       </div>
 
-      <ContactButtonsSection class="content-reveal-animation mt-16"/>
+      <Testimonials />
+
+      <ContactButtonsSection class="content-reveal-animation mt-16" />
     </section>
   </div>
 </div>

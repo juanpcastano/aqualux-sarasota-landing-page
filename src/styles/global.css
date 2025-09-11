@@ -83,6 +83,22 @@
   }
 }
 
+@keyframes autorun {
+  from {
+    transform: translateX(0);
+  }to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility auto-run-animation {
+  animation: autorun 25s linear infinite;
+}
+
+.auto-run-animation:hover {
+  animation-play-state: paused;
+}
+
 @utility content-reveal-animation {
   animation: content-reveal linear both;
   animation-timeline: view();
