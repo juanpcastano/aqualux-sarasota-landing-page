@@ -2,6 +2,7 @@
 import LogoImage from "../images/HeroImageNoText.png";
 import { Image } from "astro:assets";
 import ContactButton from "./Contact Button.astro";
+import ContactButtonsSection from "./Contact Buttons Section.astro";
 ---
 
 <div
@@ -13,27 +14,20 @@ import ContactButton from "./Contact Button.astro";
     <Image
       src={LogoImage}
       alt="Aqualux Sarasota Logo"
-      class="w-[90%] xl:w-[55%] 2xl:w-[80%] h-fit"
+      class="w-[90%] xl:w-[45%] 2xl:w-[75%] h-fit"
     />
+
     <div
-      class="relative grid grid-cols-2 lg:grid-cols-3 grid-rows-2 lg:grid-rows-1 gap-0 lg:gap-4 items-center justify-items-center mt-4"
+      class="flex flex-col items-center justify-center col-start-1 col-end-3 lg:row-auto lg:col-auto"
     >
-      <ContactButton label="Contact Us" class="col-start-1 row-start-2 lg:row-auto lg:col-auto" />
-
-      <div class="flex flex-col items-center justify-center col-start-1 col-end-3 lg:row-auto lg:col-auto">
-        <h1
-          class="font-bebas-neue text-secondary text-9xl mt-2"
-        >
-          AQUALUX
-        </h1>
-        <h2
-          class="font-source-sans 2xl:text-5xl lg:text-4xl text-2xl text-secondary"
-        >
-          SARASOTA
-        </h2>
-      </div>
-
-      <ContactButton label="Call Us" class="col-start-2 row-start-2 lg:row-auto lg:col-auto" />
+      <h1 class="font-bebas-neue text-secondary  xl:text-8xl 2xl:text-title xs:text-9xl text-8xl p-0 mt-2">AQUALUX</h1>
+      <h2
+        class="font-source-sans 2xl:text-7xl sm:text-6xl text-4xl text-secondary"
+      >
+        SARASOTA
+      </h2>
     </div>
+
+    <ContactButtonsSection class="mt-4" />
   </div>
 </div>

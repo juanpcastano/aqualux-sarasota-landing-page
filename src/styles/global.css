@@ -35,6 +35,11 @@
   --color-accent: #ffb509;
 
   --color-background: #f2f2f2;
+
+  --text-title: 12rem; 
+  --text-title--line-height: 1;
+
+  --breakpoint-xs: 450px;
 }
 
 @keyframes logo-reveal {
@@ -92,7 +97,7 @@
 }
 
 @utility auto-run-animation {
-  animation: autorun 25s linear infinite;
+  animation: autorun 60s linear infinite;
 }
 
 .auto-run-animation:hover {

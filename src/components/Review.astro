@@ -4,9 +4,9 @@ const { class: clasName = "", name, date, stars, comment, imgsrc, href } = Astro
 
 <li class={`mx-5 hover:scale-110 transition-all ${clasName}`}>
   <a href={href} class="cursor-pointer">
-    <div class="w-[500px] bg-background/90 rounded-2xl p-8 h-full">
-      <div class="flex items-center justify-between">
-        <h1 class="text-6xl text-start font-bebas-neue text-secondary">
+    <div class="w-[310px] sm:w-[500px] bg-background/90 rounded-2xl p-8 h-full">
+      <div class="flex items-start sm:items-center justify-between flex-col sm:flex-row ">
+        <h1 class="text-4xl md:text-6xl text-start font-bebas-neue text-secondary">
           {name}
         </h1>
         <span class="block text-secondary text-right font-bold">{date}</span>
@@ -23,7 +23,7 @@ const { class: clasName = "", name, date, stars, comment, imgsrc, href } = Astro
         <img src={imgsrc} alt="Quote Icon" class="w-12 h-12 lg:w-16 lg:h-16" />
       </div>
       <p
-        class="mt-4 text-secondary overflow-auto"
+        class="mt-4 text-secondary overflow-auto max-h-[220px] sm:max-h-full"
       >
         {comment}
       </p>
