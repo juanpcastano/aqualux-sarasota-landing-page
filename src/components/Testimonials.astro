@@ -78,10 +78,9 @@ const testimonials = [
   },
 ];
 ---
-
-<div class="max-w-screen content-reveal-animation mt-8 py-8 overflow-x-hidden">
+<div id="container" class="max-w-screen content-reveal-animation mt-8 py-8 overflow-x-auto sm:overflow-x-hidden">
   <div class="flex">
-    <ul class="flex auto-run-animation h-max">
+    <ul id="list" class="flex grow-0 shrink-0 sm:auto-run-animation h-max">
       {
         [...testimonials, ...testimonials].map((testimonial) => (
           <Review {...testimonial} />
@@ -90,3 +89,37 @@ const testimonials = [
     </ul>
   </div>
 </div>
+
+<script>
+  // Obtiene el contenedor de scroll
+  const container = document.getElementById('container');
+
+  // Si el contenedor existe, inicia la animación
+  if (container) {
+    let scrollSpeed = 1; // Velocidad de desplazamiento en píxeles
+    let scrollInterval;
+
+    // Función para iniciar el scroll automático
+    function startScrolling() {
+      scrollInterval = setInterval(() => {
+        // Mueve el scroll horizontalmente
+        container?.scrollBy({
+          left: scrollSpeed,
+        });
+        if (!container) return;
+        // Reinicia el scroll cuando llega al final para un bucle infinito
+        if (container.scrollLeft >= container.scrollWidth / 2) {
+          container.scrollLeft = 0;
+        }
+      }, 50); // El intervalo determina la suavidad y frecuencia de la animación
+    }
+
+    // Inicia el scroll cuando el mouse entra en el contenedor
+    
+
+    // Detiene el scroll cuando el mouse sale del contenedor
+    
+    // Inicia el scroll la primera vez
+    startScrolling();
+  }
+</script>
