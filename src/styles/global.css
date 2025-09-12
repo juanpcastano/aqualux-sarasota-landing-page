@@ -39,7 +39,7 @@
   --text-title: 12rem; 
   --text-title--line-height: 1;
 
-  --breakpoint-xs: 450px;
+  --breakpoint-xs: 460px;
 }
 
 @keyframes logo-reveal {
@@ -143,12 +143,16 @@
     box-sizing: border-box;
   }
 
+  html{
+    scroll-behavior: smooth;
+  }
+
   body {
     margin: 0;
     width: 100%;
     height: 100%;
     font-family: var(--font-primary);
     background-color: var(--color-background);
-    color: var(--color-primary);
+    color: var(--color-secondary);
   }
 }

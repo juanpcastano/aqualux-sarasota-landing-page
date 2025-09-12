@@ -6,14 +6,16 @@ import Review from "../components/Review.astro";
 ---
 
 <div
-  class="bg-[url('/Third-Section.webp')] bg-cover bg-center w-full h-full flex flex-col items-center"
+  class="bg-[url('/Third-Section.webp')] bg-cover bg-center w-full h-full flex flex-col items-center -mb-16"
 >
   <div class="w-full flex flex-col justify-center items-center p-4 mt-16">
     <section class="flex flex-col grow items-center w-full max-w-7xl">
       <div
-        class="bg-secondary/90 rounded-4xl px-4 py-8 sm:px-14 sm:py-14  content-reveal-animation mt-16 w-full"
+        class="bg-secondary/90 rounded-4xl px-4 py-8 sm:px-14 sm:py-14 content-reveal-animation mt-16 w-full"
       >
-        <h1 class="text-6xl sm:text-8xl text-center font-bebas-neue text-background">
+        <h1
+          class="text-6xl sm:text-8xl text-center font-bebas-neue text-background"
+        >
           Our Service Area
         </h1>
         <div class="w-full flex justify-center">
@@ -27,8 +29,134 @@ import Review from "../components/Review.astro";
         </div>
       </div>
 
-      <ContactButtonsSection class="content-reveal-animation mt-16" />
+      <div
+        id="contact"
+        class="bg-background/90 rounded-4xl px-4 py-8 sm:px-14 sm:py-14 content-reveal-animation mt-16 w-full"
+      >
+        <h1
+          class="text-6xl sm:text-8xl text-center font-bebas-neue text-secondary"
+        >
+          Contact Us
+        </h1>
+        <form
+          class="mt-8 max-w-3xl mx-auto"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex flex-col">
+              <label for="name" class="text-lg font-medium text-secondary mb-2"
+                >Name *</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="rounded-full border-2 border-secondary/20 px-4 py-2 focus:border-secondary focus:outline-none"
+                placeholder="Your name"
+              />
+            </div>
+            <div class="flex flex-col">
+              <label for="phone" class="text-lg font-medium text-secondary mb-2"
+                >Phone *</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                class="rounded-full border-2 border-secondary/20 px-4 py-2 focus:border-secondary focus:outline-none"
+                placeholder="XXX-XXX-XXXX"
+              />
+            </div>
+            <div class="flex flex-col">
+              <label for="email" class="text-lg font-medium text-secondary mb-2"
+                >Email *</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="rounded-full border-2 border-secondary/20 px-4 py-2 focus:border-secondary focus:outline-none"
+                placeholder="your@email.com"
+              />
+            </div>
+            <div class="flex flex-col">
+              <label
+                for="service"
+                class="text-lg font-medium text-secondary mb-2"
+                >Service Needed *</label
+              >
+              <div class="relative">
+                <select
+                  id="service"
+                  name="service"
+                  required
+                  class="w-full appearance-none rounded-full border-2 border-secondary/20 px-4 py-2 pr-10 focus:border-secondary focus:outline-none"
+                >
+                  <option value="">Select a service</option>
+                  <option value="repairs">Pool Repairs</option>
+                  <option value="cleaning">One-time Cleaning</option>
+                  <option value="equipment">Equipment Service</option>
+                  <option value="other">Other Services</option>
+                </select>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3"
+                >
+                  <svg
+                    class="h-5 w-5 text-gray-400"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col md:col-span-2">
+              <label
+                for="address"
+                class="text-lg font-medium text-secondary mb-2"
+                >Pool Address</label
+              >
+              <input
+                type="text"
+                id="address"
+                name="address"
+                class="rounded-full border-2 border-secondary/20 px-4 py-2 focus:border-secondary focus:outline-none"
+                placeholder="Your pool address in Sarasota"
+              />
+            </div>
+            <div class="flex flex-col md:col-span-2">
+              <label
+                for="message"
+                class="text-lg font-medium text-secondary mb-2">Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="rounded-2xl border-2 border-secondary/20 px-4 py-2 focus:border-secondary focus:outline-none resize-none"
+                placeholder="Tell us about your pool service needs..."
+              ></textarea>
+            </div>
+          </div>
+          <div class="mt-6 flex justify-center">
+            <button
+              type="submit"
+              class="text-center min-w-full md:min-w-[350px] h-max bg-secondary p-3 rounded-full hover:scale-105 text-background hover:bg-background hover:text-secondary transition-all duration-300 cursor-pointer shadow-lg"
+            >
+              <span class="text-inherit font-source-sans text-xl sm:text-2xl xl:text-3xl font-bold whitespace-nowrap">Send Message</span>
+            </button>
+          </div>
+        </form>
+      </div>
     </section>
-    
   </div>
 </div>

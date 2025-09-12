@@ -1,7 +1,8 @@
 ---
-const { label , class: className = ""} = Astro.props;
+const { label , href , class: className = ""} = Astro.props;
 ---
 
-<a class=`text-center min-w-[300px] xl:min-w-[380px] h-max bg-secondary p-3 xl:p-5 rounded-full hover:scale-105 text-background hover:bg-background hover:text-secondary transition-all duration-300 cursor-pointer shadow-lg ${className}`>
+<a class=`text-center min-w-[300px] xl:min-w-[380px] h-max bg-secondary p-3 xl:p-5 rounded-full hover:scale-105 text-background hover:bg-background hover:text-secondary transition-all duration-300 cursor-pointer shadow-lg ${className}`
+href={href ? href : label === "Call Us" ? "tel:+19412875018" : "/#contact"} >
     <span class="text-inherit font-source-sans text-3xl sm:text-4xl xl:text-5xl font-bold whitespace-nowrap">{label}</span>
 </a>
