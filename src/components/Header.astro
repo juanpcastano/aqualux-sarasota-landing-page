@@ -1,14 +1,155 @@
 ---
-
-import { Image } from 'astro:assets';
-import logo from '../images/logo.ico';
-
+import { Image } from "astro:assets";
+import logo from "../images/logo.ico";
 ---
 
+<header
+  class="fixed after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:bg-gradient-to-b after:from-secondary after:from-0% after:to-primary/0 after:h-[150%] after:transition-all after:duration-300 hover:after:h-[400%] after:pointer-events-none font-bebas-neue text-5xl w-full h-[125px] flex items-center justify-center header-reveal-animation z-10 px-4"
+>
+  <div
+    class="relative z-10 flex items-center justify-between gap-4 w-full max-w-7xl px-4 sm:px-14"
+  >
+    <a href="#hero" class="flex items-center gap-3">
+      <Image
+        width={80}
+        height={80}
+        src={logo}
+        alt="Aqualux Sarasota Logo"
+        class=""
+      />
+      <h1
+        class="text-background text-center xl:text-5xl lg:text-4xl text-3xl w-min lg:text-nowrap"
+      >
+        Aqualux Sarasota
+      </h1>
+    </a>
 
-<header class="fixed after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:bg-gradient-to-b after:from-secondary after:from-0% after:to-primary/0 after:h-[150%] after:transition-all after:duration-300 hover:after:h-[400%] after:pointer-events-none font-bebas-neue text-5xl w-screen h-[125px] flex items-center justify-center px-10  header-reveal-animation z-10">
-    <div class="relative z-10 flex items-center justify-center gap-3">
-        <Image width={80} height={80} src={logo} alt="Aqualux Sarasota Logo" class="" />
-        <h1 class="text-background sm:text-5xl text-4xl">Aqualux Sarasota</h1>
+    <!-- Menú desktop (visible en md+) -->
+    <div
+      id="desktop-menu"
+      class="items-center xl:gap-8 lg:gap-5 gap-2 xl:text-xl lg:text-lg text-base md:flex hidden"
+    >
+      <a
+        href="#services"
+        class="font-sans text-background no-underline hover:underline"
+        >Services</a
+      >
+      <a
+        href="#availability"
+        class="font-sans text-background no-underline hover:underline"
+        >Availability</a
+      >
+      <a
+        href="#reviews"
+        class="font-sans text-background no-underline hover:underline"
+        >Reviews</a
+      >
+      <a
+        href="#location"
+        class="font-sans text-background no-underline hover:underline"
+        >Location</a
+      >
+      <a
+        href="#contact"
+        class="font-sans text-background no-underline hover:underline"
+        >Contact</a
+      >
     </div>
+
+    <!-- Botón hamburguesa (visible en móviles) -->
+    <button
+      id="mobile-menu-button"
+      class="md:hidden text-background focus:outline-none z-20"
+      aria-label="Toggle menu"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        class="w-8 h-8"
+        id="menu-icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+    </button>
+
+    <!-- Menú móvil (visible cuando se abre) -->
+    <nav
+      id="mobile-menu"
+      class="md:hidden bg-secondary/90 rounded-2xl py-6 px-10 fixed top-26 right-4 z-10 flex flex-col items-center justify-center space-y-8 text-2xl font-sans text-background hidden"
+    >
+      <a href="#services" class="hover:underline mobile-link">Services</a>
+      <a href="#availability" class="hover:underline mobile-link">Availability</a>
+      <a href="#reviews" class="hover:underline mobile-link">Reviews</a>
+      <a href="#location" class="hover:underline mobile-link">Location</a>
+      <a href="#contact" class="hover:underline mobile-link">Contact</a>
+    </nav>
+  </div>
 </header>
+
+<script>
+  // Script para manejar el menú móvil
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  function toggleMenu() {
+    if (!mobileMenu || !menuIcon) return;
+
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    
+    if (isOpen) {
+      // Cerrar menú
+      mobileMenu.classList.add('hidden');
+      // Cambiar icono a hamburguesa
+      menuIcon.innerHTML = `
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      `;
+    } else {
+      // Abrir menú
+      mobileMenu.classList.remove('hidden');
+      // Cambiar icono a X
+      menuIcon.innerHTML = `
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      `;
+    }
+  }
+
+  // Cerrar menú al hacer clic en un enlace
+  mobileLinks.forEach(link => {
+    if (!mobileMenu || !menuIcon) return;
+
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      // Restaurar icono de hamburguesa
+      menuIcon.innerHTML = `
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      `;
+    });
+  });
+
+  // Cerrar menú al hacer clic fuera
+  document.addEventListener('click', (event) => {
+    if (!mobileMenu || !menuIcon || !mobileMenuButton) return;
+
+    if (!mobileMenu.classList.contains('hidden') && 
+        !mobileMenu.contains(event.target as HTMLElement) && 
+        !mobileMenuButton.contains(event.target as HTMLElement)) {
+      mobileMenu.classList.add('hidden');
+      // Restaurar icono de hamburguesa
+      menuIcon.innerHTML = `
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      `;
+    }
+  });
+
+  // Agregar event listener al botón
+  if (mobileMenuButton) mobileMenuButton.addEventListener('click', toggleMenu);
+</script>

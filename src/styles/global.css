@@ -79,11 +79,11 @@
 
 @keyframes content-reveal {
   from {
-    transform: translateY(0);
+    transform: translateY(100px);
     opacity: 0;
   }
   to {
-    transform: translateY(-100px);
+    transform: translateY(0x);
     opacity: 1;
   }
 }
